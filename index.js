@@ -7,7 +7,7 @@ const userRoutes = require("./routes/users.route")
 const productRoutes = require("./routes/product.route")
 const cartRoutes = require("./routes/cart.route")
 const adminRoutes = require("./routes/admin.route")
-const port = process.env.port || 8080
+const PORT = process.env.port || 8080
 const cors = require("cors")
 const bcrypt = require('bcrypt');
 app.use(cors())
@@ -20,10 +20,10 @@ app.use("/admin",adminRoutes)
 
 
 
-app.listen(port , async()=>{
+app.listen(PORT , async()=>{
     try{
       await connect()
-      console.log(`http://localhost:${port}`)
+      console.log(`http://localhost:${PORT}`)
     }catch(e){
         console.log(e.message)
     }

@@ -15,10 +15,8 @@ const authenticator = require("../middlewares/authenticator")
 
 app.get("/" , async(req,res)=>{
     const query = req.query
-    const {limit=12 , page=1} = req.query
-    console.log(limit , page)
     try{
-      const allProducts = await Products.find(query).limit(limit).skip((page-1)*limit)
+      const allProducts = await Products.find(query)
       res.send(allProducts)
 
     }catch(e){

@@ -13,7 +13,7 @@ app.get("/products",async(req,res)=>{
     if(products.length>0){
         res.send(products)
     }else{
-        res.send("There is no Product")
+        res.send({msg:"There is no Product"})
     }
     }catch(e){
         res.send(e.message)
